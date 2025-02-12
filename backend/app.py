@@ -5,9 +5,12 @@ from utils.pdf_scraper import extract_pdf_data
 #scan the rest of the dir and see where other files are, relative to this file
 app = Flask(__name__)
 
+#url for the site
 url = "https://www.iit.edu/registrar/academic-calendar/final-exam-schedule"
 
+
 @app.route('/get-exam-schedule', methods=['GET'])
+
 def get_exam_schedule():
     try:
         pdf_link = get_pdf_link(url)
@@ -18,4 +21,5 @@ def get_exam_schedule():
         
 if __name__ == '__main__':
     app.run(debug=True)
+    
     
